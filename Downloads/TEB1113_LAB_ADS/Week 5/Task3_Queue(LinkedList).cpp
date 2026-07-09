@@ -6,11 +6,11 @@ using namespace std;
 class Queue{
     private:
         struct Node{
-            string name;
+            string name;            // each node stores name and a pointer to next
             Node* next = NULL;
         };
         
-        Node* front = NULL;
+        Node* front = NULL;         // queue has two pointers, front(first person in line) and rear(last person in line).
         Node* rear = NULL;
     
     public:
@@ -24,8 +24,8 @@ class Queue{
                 return;
             }
 
-            rear->next = newNode;
-            rear = newNode;
+            rear->next = newNode;   // rear's next pointer points to newNode
+            rear = newNode;         // declare newNode as rear
         }
 
         void dequeue(){
@@ -33,7 +33,7 @@ class Queue{
                 cout << "Queue is empty" << endl;
                 return;
             }
-            front = front->next;
+            front = front->next;    // basically shifting front to the next node
 
             if (front == NULL){
                 rear = NULL;

@@ -5,19 +5,19 @@ using namespace std;
 
 class Stack {
     private:
-        struct Node {
-            string name;
-            Node* next = NULL;
+        struct Node { 
+            string name;            // node is a blueprint. each node stores name and a pointer to node below it
+            Node* next = NULL;      
         };
         
-        Node* top = NULL;
+        Node* top = NULL;           // top tracks topmost. starts at null cuz its empty
 
     public:
         void push(string name) {
-            Node* newNode = new Node();
-            newNode->name = name;
-            newNode->next = top;
-            top = newNode;
+            Node* newNode = new Node();     // creates a new empty node
+            newNode->name = name;           // fill name
+            newNode->next = top;            // point to top
+            top = newNode;                  // declare new node as top
         }
 
         void pop() {
@@ -25,7 +25,7 @@ class Stack {
                 cout << "Stack is empty" << endl;
                 return;
             }
-            top = top->next;
+            top = top->next;                // move top down to the next node
         }
 
         void peek() {
