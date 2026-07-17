@@ -137,7 +137,7 @@ int main() {
 
     for (int i = 0; i < numVertices; i++) {
         Vertex* current = adjList[i];
-        while (current != NULL) {
+        while (current != NULL) { 
             Vertex* temp = current;
             current = current->next;
             delete temp;
